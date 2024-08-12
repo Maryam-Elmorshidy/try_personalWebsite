@@ -1,0 +1,103 @@
+/* @media condition {  and==> and 
+                       or ==> , 
+    
+} */
+@media (max-width: 1000px){
+    html{
+        font-size: 8px;
+    }
+}
+@media (max-width: 800px){
+    .container{
+        row-gap: 8rem;
+    }
+    .section{
+        grid-template-columns: 1fr;
+    }
+    .bio__pic--content{
+        grid-row: 1;
+        margin-bottom: 4rem;
+        justify-self: center;
+    }
+    
+    .skills__list{
+        grid-template-columns: repeat(2,1fr);
+        /* justify-self: center; */
+    }
+    .projects__description--two{
+        grid-row: 6;
+        /* order: -1; */
+    }
+    .projects__image{
+        justify-self: center;
+        row-gap: 6rem;
+    }
+    /* .projects:nth-of-type(2){
+        order: 1;
+    } */
+    .clients__opinions{
+        font-size: var(--font-size-24);
+    }
+    .contact__form--contact{
+        order: -1;
+        margin-bottom: 6rem;
+    }
+}
+
+@media (max-width: 500px){
+    .bio__pic{
+        width: 100%;
+    }
+    .header{
+        padding: 0;
+    }
+    .header::before{
+        z-index: 0;
+    }
+    .menu__burgur{
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 0.75rem; 
+        z-index: 1;
+        align-self: center;
+    }
+    .menu__burgur--bar{
+        width: 4.375rem;
+        height: 0.3rem;
+        background-color: var(--color-text);
+        transition: var(--transition-timing);
+
+    }
+    .header:has(.menu__burgur--checkbox:checked) .menu__burgur--bar:nth-child(1){
+        transform: translateY(10px) rotate(40deg);
+    }
+    .header:has(.menu__burgur--checkbox:checked) .menu__burgur--bar:nth-child(2){
+        opacity: 0;
+        visibility: hidden;
+    }
+    .header:has(.menu__burgur--checkbox:checked) .menu__burgur--bar:nth-child(3){
+        transform: translateY(-7px) rotate(-40deg);
+    }
+    .navigation{
+        position: absolute;
+        background-color: var(--color-background);
+        top: 0;
+        width: 100vw;
+        z-index: -1;
+        padding: 3rem 0;
+        border-bottom: 0.1rem solid var(--color-input-border);
+        transition: var(--transition-timing);
+    }
+    .navigation__list{
+        justify-content: center;
+    }
+    .toggle{
+        padding: 3rem 0;
+        z-index: 1;
+    }
+    .menu__burgur--checkbox:checked + .navigation{
+        top: 100%;
+        
+    }
+}

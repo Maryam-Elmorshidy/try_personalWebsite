@@ -1,0 +1,28 @@
+@import "./mixin";
+.skills{
+    position: relative;
+}
+
+.skills__list{
+    // @include twoColumns($column-gap: 0 , $row-gap: 5rem) ;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 5rem;
+}
+.skills__list--big{
+    font-size: var(--font-size-38);
+    font-weight: var(--font-weight-semi-bold);
+    
+    
+}
+.skills__list--small{
+    font-size: var(--font-size-20);
+    margin-top: 1rem;
+}
+.skills__items{
+    transition: var(--transition-timing);
+    user-select: none;
+}
+.skills__items:hover{
+    text-shadow: 0 3px 7px var(--color-green);
+}
